@@ -1,0 +1,100 @@
+.bookmarkContainer {
+  position: relative;
+}
+
+.bookmark {
+  width: 350px;
+  height: 100px;
+  cursor: pointer;
+  margin: 15px;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 300ms, -webkit-box-shadow 300ms, -mox-box-shadow 300ms;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid white;
+}
+
+.bookmark label {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  transition: background 300ms;
+}
+
+.bookmarkContainer:hover .bookmark {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid #aaa;
+}
+
+.bookmarkOptions {
+  position: absolute;
+  top: 100%;
+  width: calc(100% - 38px);
+  height: 0px;
+  margin: -15px 15px 0px 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  left: 3px;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 25%);
+  transition: height 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bookmarkContainer:hover .bookmarkOptions {
+  height: 32px;
+}
+
+.bookmarkOptions button {
+  margin-top: 1px;
+}
+
+.bookmarkOptions > div {
+  opacity: 0;
+}
+
+.bookmarkContainer:hover .bookmarkOptions > div {
+  opacity: 1;
+}
+
+.bookmarkName {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.bookmarkDescription {
+  padding: 0px 8px;
+  color: #777;
+  max-height: 50px;
+  overflow: hidden hidden;
+  text-align: center;
+}
+
+.bookmarkImg {
+  height: 100px;
+  min-width: 100px;
+  border: none;
+  border-right: #efefef 2px dashed;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  padding: 15px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookmarkImg img {
+  margin-bottom: 0px;
+}
+
+.bookmarkImg img {
+  height: 32px;
+}

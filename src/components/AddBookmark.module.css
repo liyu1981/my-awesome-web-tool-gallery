@@ -1,0 +1,12 @@
+.bookmarkAdd {
+  opacity: 0.7;
+}
+
+.bookmarkAdd label {
+  height: 100px;
+  width: 250px;
+}
+
+.bookmarkAdd:hover {
+  opacity: 0.8;
+}
