@@ -10,3 +10,8 @@
 .bookmarkAdd:hover {
   opacity: 0.8;
 }
+
+.dialogContainer {
+  padding: 8px 18px;
+  min-height: 600px;
+}

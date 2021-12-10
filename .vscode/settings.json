@@ -6,6 +6,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["blueprintjs", "clsx"],
+  "cSpell.words": ["blueprintjs", "clsx", "Cros"],
   "files.autoSave": "onFocusChange"
 }

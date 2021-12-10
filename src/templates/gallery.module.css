@@ -33,3 +33,38 @@
   padding-top: 80px;
   box-sizing: border-box;
 }
+
+.galleryTopContainer {
+  display: flex;
+}
+
+.galleryContainer {
+  width: 100vw;
+}
+
+.inGalleryTab {
+  width: 0px;
+  height: 100vh;
+  transition: width 300ms ease-in-out;
+}
+
+.inGalleryTabOpen .galleryContainer {
+  width: auto;
+}
+
+.inGalleryTabOpen .inGalleryTab {
+  width: calc(100% - 380px);
+  overflow-y: hidden;
+}
+
+.inGalleryTabOpen .inGalleryTab iframe {
+  width: 100%;
+  height: calc(100vh - 29px);
+  border: 1px solid gray;
+}
+
+.inGalleryTabOpen .galleryContainer .app,
+.inGalleryTabOpen .galleryContainer .nav {
+  width: 380px;
+  transition: width 300ms ease-in-out;
+}

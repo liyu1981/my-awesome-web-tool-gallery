@@ -5,17 +5,28 @@ import * as styles from './AddBookmark.module.css';
 import { Icon } from '@blueprintjs/core';
 import clsx from 'clsx';
 
-export default function AddBookmark(_props: any) {
+interface AddBookmarkProps {}
+
+export default function AddBookmark(_props: AddBookmarkProps) {
   return (
-    <div className={clsx(bookmarkStyles.bookmark, styles.bookmarkAdd)}>
-      <div className={bookmarkStyles.bookmarkImg}>
-        <Icon icon="add" iconSize={32} />
+    <>
+      <div
+        className={bookmarkStyles.bookmarkContainer}
+        onClick={() => {
+          window.open('https://liyu1981.github.io', '_blank');
+        }}
+      >
+        <div className={clsx(bookmarkStyles.bookmark, styles.bookmarkAdd)}>
+          <div className={bookmarkStyles.bookmarkImg}>
+            <Icon icon="add" iconSize={32} />
+          </div>
+          <div>
+            <label className={clsx(bookmarkStyles.bookmarkName)}>
+              Add New Tool
+            </label>
+          </div>
+        </div>
       </div>
-      <div>
-        <label className={clsx(bookmarkStyles.bookmarkName)}>
-          Add New Tool
-        </label>
-      </div>
-    </div>
+    </>
   );
 }

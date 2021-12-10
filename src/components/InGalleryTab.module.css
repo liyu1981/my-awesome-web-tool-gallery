@@ -1,0 +1,15 @@
+.locationBarContainer,
+.locationBar {
+  display: flex;
+  align-items: center;
+}
+
+.locationBar img {
+  width: 18px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.locationBar span {
+  margin-right: 8px;
+}

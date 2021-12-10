@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-gallery-tsx",
+    "path": "/",
+    "result": {"pageContext":{"allTools":[{"name":"Crontab Guru","description":"Crontab.guru - The cron schedule expression editor","url":"https://crontab.guru/","logo":"https://crontab.guru/favicon.ico","canCros":true},{"name":"gitignore.io","description":"gitignore.io - Create Useful .gitignore Files For Your Project","url":"https://www.toptal.com/developers/gitignore","logo":"https://www.toptal.com/developers/gitignore/favicon.ico","canCros":false}]}},
+    "staticQueryHashes": []}
