@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/my-awesome-web-tool-gallery`,
   siteMetadata: {
     title: `My Awesome Web Tool Gallery`,
     description: `Try to build a better awesome list`,

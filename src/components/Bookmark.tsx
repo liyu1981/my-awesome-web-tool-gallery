@@ -35,7 +35,7 @@ export default function Bookmark(props: BookmarkProps) {
           <ButtonGroup fill={true} minimal={true}>
             <Button
               icon="application"
-              text="Open in Dialog"
+              text="Open in iframe"
               disabled={!props.canCros}
               onClick={() =>
                 props.navigateInGalleryTab({

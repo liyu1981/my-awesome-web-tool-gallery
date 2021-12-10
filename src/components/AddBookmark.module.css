@@ -11,7 +11,12 @@
   opacity: 0.8;
 }
 
-.dialogContainer {
-  padding: 8px 18px;
-  min-height: 600px;
+.dialogBody {
+  padding: 18px 18px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1.2rem;
+}
+
+.dialogBody li {
+  margin-bottom: 18px;
 }
