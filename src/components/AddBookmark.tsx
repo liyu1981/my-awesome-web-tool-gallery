@@ -13,7 +13,10 @@ export default function AddBookmark(_props: AddBookmarkProps) {
       <div
         className={bookmarkStyles.bookmarkContainer}
         onClick={() => {
-          window.open('https://liyu1981.github.io', '_blank');
+          window.open(
+            'https://github.com/liyu1981/my-awesome-web-tool-gallery#add-new-tool',
+            '_blank',
+          );
         }}
       >
         <div className={clsx(bookmarkStyles.bookmark, styles.bookmarkAdd)}>
