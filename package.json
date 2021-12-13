@@ -15,16 +15,29 @@
     "gatsby-source-filesystem": "^4.3.0",
     "gatsby-transformer-sharp": "^4.3.0",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@blueprintjs/core": "^3.51.3",
+    "@types/chrome": "^0.0.170",
+    "@types/react-dom": "^17.0.11",
     "@types/react-helmet": "^6.1.4",
+    "clean-webpack-plugin": "^4.0.0",
     "clsx": "^1.1.1",
+    "copy-to-clipboard": "^3.3.1",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "prettier": "^2.4.1",
-    "react-markdown": "^7.1.1"
+    "react": "^16.14.0",
+    "react-markdown": "^7.1.1",
+    "react-syntax-highlighter": "^15.4.5",
+    "tacit-css": "^1.5.5",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.3",
+    "webpack-cli": "^4.9.1",
+    "webpack-merge": "^5.8.0"
   },
   "keywords": [
     "gatsby"
@@ -37,7 +50,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "build-helper-dev": "./scripts/build_helper_dev.sh",
+    "build-helper": "./scripts/build_helper.sh"
   },
   "repository": {
     "type": "git",

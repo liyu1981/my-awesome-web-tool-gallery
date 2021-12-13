@@ -1,0 +1,43 @@
+body {
+  margin: 0px;
+}
+
+.codeContainer {
+  border-radius: 8px;
+  font-size: 1.8em;
+}
+
+.codeContainer pre {
+  margin: 0px 0px;
+  background-color: #eee !important;
+}
+
+.codeToolbar {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.codeToolbarCopy {
+  margin: 0px auto;
+}
+
+.codeToolbarCopy button {
+  font-size: 1.5em;
+  color: #333;
+  border: 1px solid #eee;
+  background-color: #eee;
+  margin: 8px;
+  border-radius: 16px;
+  line-height: 2em;
+  padding: 0px 2em;
+  cursor: pointer;
+}
+
+.codeToolbarCopy button:hover {
+  border: 1px solid #333;
+}
+
+.codeToolbarCopyCopied button {
+  color: green !important;
+}
