@@ -13,7 +13,7 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
 // @ts-ignore
-function Seo({ description, lang, meta, title }) {
+function Seo({ lang, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +28,7 @@ function Seo({ description, lang, meta, title }) {
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
 
   return (
@@ -36,7 +36,7 @@ function Seo({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={site.siteMetadata.title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
@@ -45,7 +45,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           property: `og:description`,
@@ -65,7 +65,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           name: `twitter:description`,
@@ -79,14 +79,11 @@ function Seo({ description, lang, meta, title }) {
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
 };
 
 Seo.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default Seo;

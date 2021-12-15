@@ -4,13 +4,14 @@ import * as FlexSearch from 'flexsearch';
 import * as React from 'react';
 import * as styles from './gallery.module.css';
 
-import { Colors, InputGroup } from '@blueprintjs/core';
 import { findIndex, uniq } from 'lodash';
 import { useEffect, useState } from 'react';
 
 import AddBookmark from '../components/AddBookmark';
 import Bookmark from '../components/Bookmark';
 import InGalleryTab from '../components/InGalleryTab';
+import { InputGroup } from '@blueprintjs/core';
+import Seo from '../components/seo';
 import clsx from 'clsx';
 // import Seo from '../components/seo';
 import { useDebounceCallback } from '@react-hook/debounce';
@@ -149,6 +150,7 @@ export default function GalleryPage(props: {
           ''
         )}
       </div>
+      <Seo />
     </div>
   );
 }
