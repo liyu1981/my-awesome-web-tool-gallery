@@ -22,6 +22,10 @@
   margin-right: auto;
 }
 
+.navItemContainer {
+  margin: 0px 18px;
+}
+
 .app {
   display: flex;
   align-items: center;

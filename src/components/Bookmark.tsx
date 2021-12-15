@@ -5,14 +5,9 @@ import { Button, ButtonGroup } from '@blueprintjs/core';
 
 import { ToolBookmark } from '../templates/gallery';
 
-interface BookmarkProps {
-  name: string;
-  description: string;
-  url: string;
-  logo: string;
-  canCros: boolean;
+type BookmarkProps = ToolBookmark & {
   navigateInGalleryTab: (url: ToolBookmark | null) => void;
-}
+};
 
 export default function Bookmark(props: BookmarkProps) {
   const openBookmarkInNewTab = () => {
@@ -23,7 +18,7 @@ export default function Bookmark(props: BookmarkProps) {
     <div className={styles.bookmarkContainer}>
       <div className={styles.bookmark} onClick={openBookmarkInNewTab}>
         <div className={styles.bookmarkImg}>
-          <img src={props.logo} />
+          <img src={props.favicon} />
         </div>
         <div>
           <label className={styles.bookmarkName}>{props.name}</label>
@@ -36,14 +31,15 @@ export default function Bookmark(props: BookmarkProps) {
             <Button
               icon="application"
               text="Open in iframe"
-              disabled={!props.canCros}
+              disabled={!props.canUseWithIframe}
               onClick={() =>
                 props.navigateInGalleryTab({
+                  id: props.id,
                   name: props.name,
                   description: props.description,
                   url: props.url,
-                  logo: props.logo,
-                  canCros: props.canCros,
+                  favicon: props.favicon,
+                  canUseWithIframe: props.canUseWithIframe,
                 })
               }
             />

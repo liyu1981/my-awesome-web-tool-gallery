@@ -13,7 +13,7 @@ import { render } from 'react-dom';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
-async function detectCanCros(url: string) {
+async function detectCanUseWithIframe(url: string) {
   const response = await fetch(url);
   if (!response.ok) {
     return false;
@@ -47,13 +47,13 @@ function Helper() {
     if (tabs.length > 0) {
       const tab = tabs[0];
       if (tab) {
-        const canCros = await detectCanCros(tab.url);
+        const canUseWithIframe = await detectCanUseWithIframe(tab.url);
         setActiveTabInfo({
           name: tab.title.split(' ')[0],
           description: tab.title,
           url: tab.url,
-          logo: tab.favIconUrl,
-          canCros,
+          favicon: tab.favIconUrl,
+          canUseWithIframe,
         });
       }
     }

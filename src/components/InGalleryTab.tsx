@@ -6,13 +6,9 @@ import { useEffect, useState } from 'react';
 import { Button } from '@blueprintjs/core';
 import { ToolBookmark } from '../templates/gallery';
 
-interface InGalleryTabProps {
-  name: string;
-  description: string;
-  url: string;
-  logo: string;
+type InGalleryTabProps = ToolBookmark & {
   navigateInGalleryTab: (url: ToolBookmark | null) => void;
-}
+};
 
 export default function InGalleryTab(props: InGalleryTabProps) {
   const [iframeUrl, setIframeUrl] = useState<string | null>(null);
@@ -29,7 +25,7 @@ export default function InGalleryTab(props: InGalleryTabProps) {
           onClick={() => props.navigateInGalleryTab(null)}
         />
         <span className={styles.locationBar}>
-          <img src={props.logo} />
+          <img src={props.favicon} />
           <span>
             <b>{props.name}</b>
           </span>

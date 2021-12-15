@@ -1,17 +1,15 @@
 import * as React from 'react';
-import * as bookmarkStyles from './Bookmark.module.css';
 import * as styles from './AddBookmark.module.css';
 
-import { Dialog, Icon } from '@blueprintjs/core';
+import { Button, Dialog } from '@blueprintjs/core';
 
 import ReactMarkdown from 'react-markdown';
-import clsx from 'clsx';
 import { useState } from 'react';
 
 interface AddBookmarkProps {}
 
 const addBookmarkInstructions = `
-You can suggest to add a new web tool here with following steps
+## You can add a new web tool here
 
 1. fork the [source of this tool](https://github.com/liyu1981/my-awesome-web-tool-gallery)
    on github.
@@ -20,6 +18,7 @@ You can suggest to add a new web tool here with following steps
    test and then send out a pull request.
 3. after your pull request is merged, the tool you suggested will be shown here
    after next build.
+
 `;
 
 export default function AddBookmark(_props: AddBookmarkProps) {
@@ -27,27 +26,14 @@ export default function AddBookmark(_props: AddBookmarkProps) {
 
   return (
     <>
-      <div
-        className={bookmarkStyles.bookmarkContainer}
-        onClick={() => setIsOpen(true)}
-      >
-        <div className={clsx(bookmarkStyles.bookmark, styles.bookmarkAdd)}>
-          <div className={bookmarkStyles.bookmarkImg}>
-            <Icon icon="add" iconSize={32} />
-          </div>
-          <div>
-            <label className={clsx(bookmarkStyles.bookmarkName)}>
-              Add New Tool
-            </label>
-          </div>
-        </div>
-      </div>
-      <Dialog
-        isOpen={isOpen}
+      <Button
         icon="add"
-        title="Want to add a new web tool here?"
-        onClose={() => setIsOpen(false)}
-      >
+        text="Add Web Tool"
+        large={true}
+        minimal={true}
+        onClick={() => setIsOpen(true)}
+      />
+      <Dialog isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className={styles.dialogBody}>
           <ReactMarkdown>{addBookmarkInstructions}</ReactMarkdown>
         </div>
