@@ -37,7 +37,7 @@ function Seo({ lang, meta }) {
         lang,
       }}
       title={site.siteMetadata.title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={defaultTitle ? `%s` : undefined}
       meta={[
         {
           name: `description`,
