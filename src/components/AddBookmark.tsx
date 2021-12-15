@@ -19,6 +19,8 @@ const addBookmarkInstructions = `
 3. after your pull request is merged, the tool you suggested will be shown here
    after next build.
 
+or, open a suggestion request in [github issue](https://github.com/liyu1981/my-awesome-web-tool-gallery/issues).
+
 `;
 
 export default function AddBookmark(_props: AddBookmarkProps) {

@@ -1,0 +1,28 @@
+{
+  "name": "MyAwesomeWebToolGalleryHelper",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "description": "My awesome web tool gallery helper",
+  "homepage_url": "https://tabverse.github.io",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "MyAwesomeWebToolGalleryHelper",
+    "default_popup": "popup.html"
+  },
+  "cross_origin_embedder_policy": {
+    "value": "require-corp"
+  },
+  "cross_origin_opener_policy": {
+    "value": "same-origin"
+  },
+  "default_locale": "en",
+  "permissions": ["tabs"],
+  "host_permissions": ["<all_urls>"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src 'self' ws: https: http:; img-src * blob: data: file:; frame-src http: https: http:;"
+  }
+}

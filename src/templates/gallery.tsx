@@ -102,6 +102,8 @@ export default function GalleryPage(props: {
           (_webTool, index) =>
             findIndex(wantedToolIndices, i => i === index) >= 0,
         )
+      : wantedToolIndices.length === 0 && searchQuery.length > 0
+      ? []
       : props.pageContext.allWebTools;
 
   return (
@@ -116,7 +118,7 @@ export default function GalleryPage(props: {
           <span className={styles.navItemContainer}>
             <InputGroup
               leftIcon="search"
-              placeholder="Input to search..."
+              placeholder="type to search..."
               large={true}
               value={searchQuery}
               onChange={e => {
