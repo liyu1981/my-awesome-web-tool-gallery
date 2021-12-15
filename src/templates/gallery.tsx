@@ -129,7 +129,7 @@ export default function GalleryPage(props: {
             <AddBookmark />
           </span>
         </nav>
-        <div className={styles.app} style={{ backgroundColor: Colors.GRAY2 }}>
+        <div className={styles.app}>
           {filteredWebTools.map((tool, index) => (
             <Bookmark
               key={index}
