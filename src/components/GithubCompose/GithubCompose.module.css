@@ -1,0 +1,31 @@
+.composeDialog {
+  min-width: 800px;
+  min-height: 552px;
+}
+
+.composeDialogContainer {
+  padding: 18px 18px;
+}
+
+.dialogToastContainer {
+  display: flex;
+}
+
+.dialogToast {
+  padding: 8px 18px;
+  width: 100%;
+}
+
+.dialogToastCloseBtn {
+  padding: 8px 11px;
+}
+
+.danger {
+  background-color: #f55656;
+  color: white;
+}
+
+.success {
+  background-color: #15b371;
+  color: white;
+}

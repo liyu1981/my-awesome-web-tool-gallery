@@ -9,11 +9,11 @@ import { useEffect, useState } from 'react';
 
 import AddBookmark from '../components/AddBookmark';
 import Bookmark from '../components/Bookmark';
+import ComposeDialog from '../components/GithubCompose/ComposeDialog';
 import InGalleryTab from '../components/InGalleryTab';
 import { InputGroup } from '@blueprintjs/core';
 import Seo from '../components/seo';
 import clsx from 'clsx';
-// import Seo from '../components/seo';
 import { useDebounceCallback } from '@react-hook/debounce';
 
 export interface ToolBookmark {
@@ -129,6 +129,7 @@ export default function GalleryPage(props: {
           </span>
           <h1 className={styles.logo}>My Awesome Web Tool Gallery</h1>
           <span className={styles.navItemContainer}>
+            <ComposeDialog />
             <AddBookmark />
           </span>
         </nav>

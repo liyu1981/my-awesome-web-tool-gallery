@@ -64,3 +64,15 @@ exports.onPostBootstrap = async (ref, options) => {
     }, 1000);
   });
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    // resolve: {
+    //   fallback: {
+    //     stream: require.resolve('stream-browserify'),
+    //     crypto: require.resolve('crypto-browserify'),
+    //     buffer: require.resolve('buffer-browserify'),
+    //   },
+    // },
+  });
+};
