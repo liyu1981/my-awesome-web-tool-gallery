@@ -22,7 +22,6 @@ async function detectCanUseWithIframe(url: string) {
   let foundContentSecurityPolicy = false;
   let foundXFrameOptions = false;
   response.headers.forEach((value, key) => {
-    console.log('headers:', key, value);
     if (key === 'Content-Security-Policy' && value.length > 0) {
       foundContentSecurityPolicy = true;
     }

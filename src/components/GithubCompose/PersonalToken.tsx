@@ -41,20 +41,17 @@ function PersonalTokenDecrypt({
     try {
       personalToken = decrypt(encryptedPersonalToken, password);
     } catch (e) {
-      console.log('error', e);
       onAddToast(getErrorToast('Password is not correct!'));
       return;
     }
     try {
       await validateGithubPersonalToken(personalToken);
     } catch (err) {
-      console.log('err', err);
       onAddToast(
         getErrorToast('Stored personal token is not valid. Please re-setup.'),
       );
       return;
     }
-    console.log('loaded:', personalToken);
     onSetPersonalTokenGetter(() => personalToken);
   };
 

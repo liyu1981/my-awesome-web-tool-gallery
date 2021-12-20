@@ -54,7 +54,7 @@ export default function GalleryPage(props: {
     const results = await fetch('webtool_all_index.json');
     const data: { [k: string]: { [k2: string]: string } } =
       await results.json();
-    console.log('loaded data:', data);
+    // console.log('loaded indices data:', data);
     const nameIndex = new FlexSearch.Index({
       preset: 'performance',
       tokenize: 'forward',

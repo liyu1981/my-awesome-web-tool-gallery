@@ -136,7 +136,7 @@ export async function validateGithubRepo(
   const octokit = new Octokit({ auth: token });
   try {
     const r1 = await octokit.request(`GET /user`);
-    console.log('get /user returns:', r1);
+    // console.log('get /user returns:', r1);
     const owner = r1.data.login;
     if (owner) {
       await octokit.request(
@@ -162,13 +162,12 @@ export async function submitGithubFile(
   filePath: string,
   fileContent: string,
 ) {
-  console.log('submit to github', filePath, fileContent);
   const octokit = new Octokit({ auth: token });
 
   let owner = '';
   try {
     const r1 = await octokit.request(`GET /user`);
-    console.log('get /user returns:', r1);
+    // console.log('get /user returns:', r1);
     owner = r1.data.login;
     if (owner) {
     }
@@ -187,7 +186,7 @@ export async function submitGithubFile(
         repo,
       },
     );
-    console.log('get returns:', r2);
+    // console.log('get returns:', r2);
     // oops, file exists
     exist = true;
   } catch (err) {
@@ -199,13 +198,13 @@ export async function submitGithubFile(
     throw new Error(`${filePath} already exists!`);
   } else {
     try {
-      console.log('will call PUT /repos/{owner}/{repo}/contents/{path} with', {
-        owner,
-        repo,
-        path: filePath,
-        message: `Add ${filePath}`,
-        content: fileContent,
-      });
+      // console.log('will call PUT /repos/{owner}/{repo}/contents/{path} with', {
+      //   owner,
+      //   repo,
+      //   path: filePath,
+      //   message: `Add ${filePath}`,
+      //   content: fileContent,
+      // });
       const r3 = await octokit.request(
         formatOctokitRequestRoute('PUT /repos/{owner}/{repo}/contents/{path}', {
           path: filePath,
