@@ -38,6 +38,7 @@ export default function GalleryPage(props: {
     null,
   );
   const [wantedToolIndices, setWantedToolIndices] = useState<number[]>([]);
+  const [composeDialogIsOpen, setComposeDialogIsOpen] = useState(false);
 
   const navigateInGalleryTab = (bookmark: ToolBookmark | null) => {
     if (bookmark) {
@@ -129,8 +130,13 @@ export default function GalleryPage(props: {
           </span>
           <h1 className={styles.logo}>My Awesome Web Tool Gallery</h1>
           <span className={styles.navItemContainer}>
-            <ComposeDialog />
-            <AddBookmark />
+            <ComposeDialog
+              isOpen={composeDialogIsOpen}
+              onClose={() => setComposeDialogIsOpen(false)}
+            />
+            <AddBookmark
+              onOpenComposeDialog={() => setComposeDialogIsOpen(true)}
+            />
           </span>
         </nav>
         <div className={styles.app}>

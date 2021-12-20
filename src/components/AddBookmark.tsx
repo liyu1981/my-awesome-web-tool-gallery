@@ -6,7 +6,9 @@ import { Button, Dialog } from '@blueprintjs/core';
 import ReactMarkdown from 'react-markdown';
 import { useState } from 'react';
 
-interface AddBookmarkProps {}
+interface AddBookmarkProps {
+  onOpenComposeDialog: () => void;
+}
 
 const addBookmarkInstructions = `
 ## You can add a new web tool here
@@ -23,7 +25,7 @@ or, open a suggestion request in [github issue](https://github.com/liyu1981/my-a
 
 `;
 
-export default function AddBookmark(_props: AddBookmarkProps) {
+export default function AddBookmark({ onOpenComposeDialog }: AddBookmarkProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -38,6 +40,18 @@ export default function AddBookmark(_props: AddBookmarkProps) {
       <Dialog isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className={styles.dialogBody}>
           <ReactMarkdown>{addBookmarkInstructions}</ReactMarkdown>
+          <div>
+            Otherwise, if you are the owner of this repository, enter{' '}
+            <a
+              href="#"
+              onClick={() => {
+                setIsOpen(false);
+                onOpenComposeDialog();
+              }}
+            >
+              composer UI.
+            </a>
+          </div>
         </div>
       </Dialog>
     </>

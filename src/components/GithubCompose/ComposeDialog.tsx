@@ -39,8 +39,12 @@ export function getErrorToast(message: string | React.ReactNode): IToastProps {
   };
 }
 
-export default function ComposeDialog() {
-  const [isOpen, setIsOpen] = useState(false);
+export type ComposeDialogProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+export default function ComposeDialog({ isOpen, onClose }: ComposeDialogProps) {
   const [dialogToasts, setDialogToasts] = useState<IToastWithIdProps[]>([]);
   const [personalTokenGetter, setPersonalTokenGetter] =
     useState<PersonalTokenGetter | null>(null);
@@ -63,39 +67,31 @@ export default function ComposeDialog() {
   };
 
   return (
-    <>
-      <Button
-        text="Compose"
-        minimal={true}
-        onClick={() => setIsOpen(true)}
-        large={true}
-      />
-      <Dialog
-        isOpen={isOpen}
-        icon="add"
-        title="Add New Tool"
-        onClose={() => setIsOpen(false)}
-        className={styles.composeDialog}
-        canEscapeKeyClose={false}
-        canOutsideClickClose={false}
-      >
-        <DialogToaster toasts={dialogToasts} onDelete={deleteToast} />
-        <div className={styles.composeDialogContainer}>
-          {personalTokenGetter ? (
-            <Compose
-              personalTokenGetter={personalTokenGetter}
-              onAddToast={addToast}
-            />
-          ) : (
-            <PersonalToken
-              onSetPersonalTokenGetter={getter => {
-                setPersonalTokenGetter(() => getter);
-              }}
-              onAddToast={addToast}
-            />
-          )}
-        </div>
-      </Dialog>
-    </>
+    <Dialog
+      isOpen={isOpen}
+      icon="add"
+      title="Add New Tool"
+      onClose={onClose}
+      className={styles.composeDialog}
+      canEscapeKeyClose={false}
+      canOutsideClickClose={false}
+    >
+      <DialogToaster toasts={dialogToasts} onDelete={deleteToast} />
+      <div className={styles.composeDialogContainer}>
+        {personalTokenGetter ? (
+          <Compose
+            personalTokenGetter={personalTokenGetter}
+            onAddToast={addToast}
+          />
+        ) : (
+          <PersonalToken
+            onSetPersonalTokenGetter={getter => {
+              setPersonalTokenGetter(() => getter);
+            }}
+            onAddToast={addToast}
+          />
+        )}
+      </div>
+    </Dialog>
   );
 }
